@@ -15,6 +15,12 @@
 </head>
 
 <body>
+
+
+<a>Test A Supprimer</a>
+
+
+
 <span><img id="helpButton" class="GUI" src="images/questionMark.png"></span>
 <div id="Help" class="GUI">
     <div id="box">
