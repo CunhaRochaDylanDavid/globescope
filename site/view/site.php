@@ -16,7 +16,7 @@
 
 <body>
 <span><img id="helpButton" class="GUI" src="view/images/questionMark.png"></span>
-<a id="loginEdit" class="GUI" href="login.php">ÉDITER</a>
+<a id="loginEdit" href="index.php?action=login">ÉDITER</a>
 <div id="Help" class="GUI">
     <div id="box">
         <div id="header">

@@ -17,3 +17,9 @@ function home()
     $_GET['action'] = 'home';
     require "view/site.php";
 }
+
+function login()
+{
+    $_GET['action'] = 'login';
+    require "view/login.php";
+}
