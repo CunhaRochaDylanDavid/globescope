@@ -26,7 +26,7 @@ function onImageClick(x)
                 if(myObj.ImageOK != 0)
                 {
                     var details =  document.getElementById("onClickDetails").childNodes;
-                    childImage.src = "images/400-500/"+myObj.IDImage+".jpg";
+                    childImage.src = "view/images/400-500/"+myObj.IDImage+".jpg";
                     childPseudo.textContent = myObj.Pseudo;
                     childCitation.textContent =  myObj.Slogan;
                     childRight.textContent = myObj.Droit;
@@ -36,7 +36,7 @@ function onImageClick(x)
     }
 
     //exécuter la requete en mode POST avec les paramètres voulus (x) => ID
-    xmlhttp.open("POST", "GetData.php", true);
+    xmlhttp.open("POST", "model/GetData.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("x=" + dbParam +"&Mode=click");
 

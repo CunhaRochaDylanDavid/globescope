@@ -35,7 +35,7 @@ var geometry = new THREE.SphereGeometry(10000, 60, 40);
     http://www.ianww.com/blog/2014/02/17/making-a-skydome-in-three-dot-js/
 */
 var uniforms = {
-    texture: {type: 't', value: THREE.ImageUtils.loadTexture('images/MilkyWay.jpg')}
+    texture: {type: 't', value: THREE.ImageUtils.loadTexture('view/images/MilkyWay.jpg')}
 };
 
 var material = new THREE.ShaderMaterial({

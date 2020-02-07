@@ -31,6 +31,23 @@ body
     animation: spin 2s linear infinite;
 }
 
+#loginEdit{
+    color: white;
+    position: absolute;
+    padding: 5px;
+    width: 150px;
+    bottom: 10px;
+    font-weight: bold;
+    left: 40px;
+    font-size: 25px;
+    top: 12px;
+    cursor: pointer;
+
+}
+
+a{
+    text-decoration: none;
+}
 
 @keyframes spin 
 {
