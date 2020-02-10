@@ -39,17 +39,22 @@
 <body>
 <div class="container" id="logoLogin"></div>
 <h1 class="text-center" style="color: white">Mode administrateur</h1>
+<?php
+// si error égal true alors une erreur sera affichée
+if (isset($_GET['error']) && $_GET['error'] == true) {
+    echo '<h5 class="text-center" style="color: red;">Login incorrect</h5>';
+}
+?>
 <div class="container" id="LoginContent"><br>
-    <form>
+    <form class="form" method="post" action="index.php?action=checkLogin">
         <div class="form-group">
             <label for="Email" style="color: white">Adresse Email</label>
-            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp"
-                   placeholder="Entrez votre Email">
+            <input type="text" class="form-control" id="Email" name="email" aria-describedby="emailHelp" placeholder="Entrez votre Email" required>
         </div>
         <br>
         <div class="form-group">
             <label for="Password" style="color: white">Mot de passe</label>
-            <input type="password" class="form-control" id="Password" placeholder="mot de passe">
+            <input type="password" class="form-control" id="Password" name="password" placeholder="mot de passe" required>
         </div>
         <br><br>
         <button type="submit" class="btn btn-primary">Connexion</button>

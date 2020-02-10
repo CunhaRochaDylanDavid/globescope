@@ -16,7 +16,11 @@
 
 <body>
 <span><img id="helpButton" class="GUI" src="view/images/questionMark.png"></span>
+<?php if (isset($_SESSION['admin'])) :?>
+<a id="loginLeaveEdit" href="index.php?action=logout">QUITTER ÉDITION</a>
+<?php else:?>
 <a id="loginEdit" href="index.php?action=login">ÉDITER</a>
+<?php endif;?>
 <div id="Help" class="GUI">
     <div id="box">
         <div id="header">

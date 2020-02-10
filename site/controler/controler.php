@@ -21,5 +21,19 @@ function home()
 function login()
 {
     $_GET['action'] = 'login';
-    require "view/login.php";
+    require_once "view/login.php";
+}
+
+function logout(){
+    $_SESSION = session_destroy();
+    home();
+}
+
+function checkLoginFunction($form)
+{
+    if (checkLogin($form)) {
+        home();
+    } else {
+        login();
+    }
 }
