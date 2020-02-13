@@ -24,6 +24,7 @@ function login()
     require_once "view/login.php";
 }
 
+<<<<<<< HEAD
 //A SUPPRIMMER
 function pageEditer()
 {
@@ -40,14 +41,26 @@ function pageEditer()
 }
 
 function logout(){
+=======
+function logout()
+{
+>>>>>>> 8c820f651cfb7045ecf61ed95eccc02fc9dc3295
     $_SESSION = session_destroy();
     home();
+}
+
+function tableData()
+{
+    $_GET['action'] = 'edit';
+    $produit_content = getData();
+    $_GET['data'] = $produit_content;
+    require "view/dataTable.php";
 }
 
 function checkLoginFunction($form)
 {
     if (checkLogin($form)) {
-        home();
+        tableData();
     } else {
         login();
     }
