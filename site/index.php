@@ -24,15 +24,11 @@ if (isset($_GET['action'])) {
         case 'logout':
             logout();
             break;
-<<<<<<< HEAD
-
-        //A SUPPRIMMER
         case 'pageEditer':
             pageEditer();
-=======
+            break;
         case 'edit':
             tableData();
->>>>>>> 8c820f651cfb7045ecf61ed95eccc02fc9dc3295
             break;
         default :
             home();

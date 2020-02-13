@@ -37,7 +37,7 @@
     </style>
 </head>
 <body>
-<form method="post" action="index.php?action=selectModif">
+<form method="post" action="index.php?action=pageEditer">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8 text-center">
@@ -66,7 +66,7 @@
                 <?php
                 foreach ($_GET['data'] as $userData) {
                     foreach ($userData as $value) {
-                        echo '<tr>' . '<td style="border: 0px">' . '<a style="color: white; font-size: 16px; font-family: arial, sans-serif" name=".$value->IDPlace.">Modifier</a>' . '</td>' . '</tr>';
+                        echo '<tr>' . '<td style="border: 0px">' . '<input type="submit" style="color: black; font-size: 16px; font-family: arial, sans-serif" value="Modifier" name=".$value->IDPlace." class="text-center">' . '</td>' . '</tr>';
                     }
                 }
                 ?>

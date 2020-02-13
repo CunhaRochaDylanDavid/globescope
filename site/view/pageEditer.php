@@ -6,8 +6,6 @@
  * Initial version created on: 13.02.2020 14:07
  */
 ?>
-
-
 <html>
 <head>
     <style>
@@ -54,8 +52,6 @@
 
     </tr>
 </table>
-
-
 </body>
 </html>
 <?php

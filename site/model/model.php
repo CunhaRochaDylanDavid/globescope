@@ -23,9 +23,9 @@ function checkLogin($form)
     }
 }
 
-<<<<<<< HEAD
 
-function donneeEnvoyerJSON($element){
+function donneeEnvoyerJSON($element)
+{
 //chemin d'accès au fichier json
     $fileJson = 'model/data/images.json';
 
@@ -53,12 +53,12 @@ function donneeEnvoyerJSON($element){
         file_put_contents($fileJson, $data);
 
     }
-=======
+}
+
 function getData()
 {
     $current_file = file_get_contents("model/data/images.json");
     $parsed_booksData = json_decode($current_file);
     $array_data[] = $parsed_booksData;
     return $array_data;
->>>>>>> 8c820f651cfb7045ecf61ed95eccc02fc9dc3295
 }

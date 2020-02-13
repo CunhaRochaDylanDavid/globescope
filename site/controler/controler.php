@@ -18,20 +18,23 @@ function home()
     require "view/site.php";
 }
 
+/**
+ *
+ */
 function login()
 {
     $_GET['action'] = 'login';
     require_once "view/login.php";
 }
 
-<<<<<<< HEAD
-//A SUPPRIMMER
-function pageEditer()
+
+/**
+ *
+ */
+function pageEditer($test)
 {
     $_POST['action'] = "pageEditer";
-
     $username = @$_POST["Username"];
-
 
     if (isset($username)) {
         donneeEnvoyerJSON($username);
@@ -40,15 +43,18 @@ function pageEditer()
         require "view/pageEditer.php";
 }
 
-function logout(){
-=======
+/**
+ *
+ */
 function logout()
 {
->>>>>>> 8c820f651cfb7045ecf61ed95eccc02fc9dc3295
     $_SESSION = session_destroy();
     home();
 }
 
+/**
+ *
+ */
 function tableData()
 {
     $_GET['action'] = 'edit';
@@ -57,6 +63,9 @@ function tableData()
     require "view/dataTable.php";
 }
 
+/**
+ * @param $form
+ */
 function checkLoginFunction($form)
 {
     if (checkLogin($form)) {
