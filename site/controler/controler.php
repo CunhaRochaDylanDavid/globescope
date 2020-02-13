@@ -24,15 +24,24 @@ function login()
     require_once "view/login.php";
 }
 
-function logout(){
+function logout()
+{
     $_SESSION = session_destroy();
     home();
+}
+
+function tableData()
+{
+    $_GET['action'] = 'edit';
+    $produit_content = getData();
+    $_GET['data'] = $produit_content;
+    require "view/dataTable.php";
 }
 
 function checkLoginFunction($form)
 {
     if (checkLogin($form)) {
-        home();
+        tableData();
     } else {
         login();
     }
