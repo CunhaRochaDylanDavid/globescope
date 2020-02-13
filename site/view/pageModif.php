@@ -15,7 +15,7 @@
     <input type="text" name="ville" id="Ville">
     <br>
     <label>Changement de l'établissement</label>
-    <input type="text" name="etab" id="Etat">
+    <input type="text" name="etat" id="Etat">
     <br>
     <input type="submit" name="boutton" value="Enrgistrer">
 </form>

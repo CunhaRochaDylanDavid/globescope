@@ -24,6 +24,21 @@ function login()
     require_once "view/login.php";
 }
 
+//A SUPPRIMMER
+function pageEditer()
+{
+    $_POST['action'] = "pageEditer";
+
+    $username = @$_POST["Username"];
+
+
+    if (isset($username)) {
+        donneeEnvoyerJSON($username);
+        home();
+    } else
+        require "view/pageEditer.php";
+}
+
 function logout(){
     $_SESSION = session_destroy();
     home();

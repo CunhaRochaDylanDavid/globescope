@@ -24,6 +24,11 @@ if (isset($_GET['action'])) {
         case 'logout':
             logout();
             break;
+
+        //A SUPPRIMMER
+        case 'pageEditer':
+            pageEditer();
+            break;
         default :
             home();
     }
