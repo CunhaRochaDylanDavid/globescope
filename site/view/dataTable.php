@@ -66,7 +66,7 @@
                 <?php
                 foreach ($_GET['data'] as $userData) {
                     foreach ($userData as $value) {
-                        echo '<tr>' . '<td style="border: 0px">' . '<input type="submit" style="color: black; font-size: 16px; font-family: arial, sans-serif" value="Modifier" name=".$value->IDPlace." class="text-center">' . '</td>' . '</tr>';
+                        echo '<tr>' . '<td>'.'<a href="index.php?action=editPage&code='.$value->IDPlace.'" class="btn btn-primary">Modifier</a>'.'</td>'.'</tr>';
                     }
                 }
                 ?>

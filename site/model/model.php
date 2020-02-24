@@ -62,3 +62,12 @@ function getData()
     $array_data[] = $parsed_booksData;
     return $array_data;
 }
+
+function getGoodData($id)
+{
+    foreach ($id['data'] as $userID) {
+        foreach ($userID as $value) {
+
+        }
+    }
+}

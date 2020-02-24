@@ -31,16 +31,19 @@ function login()
 /**
  *
  */
-function pageEditer($test)
+function pageEditerCode($id)
 {
-    $_POST['action'] = "pageEditer";
-    $username = @$_POST["Username"];
+    if (getGoodData($id)) {
+        editPage();
+    }
+}
 
-    if (isset($username)) {
-        donneeEnvoyerJSON($username);
-        home();
-    } else
-        require "view/pageEditer.php";
+/**
+ *
+ */
+function editPage(){
+    $_GET['action'] = 'editPage';
+    require "view/pageEditer.php";
 }
 
 /**
