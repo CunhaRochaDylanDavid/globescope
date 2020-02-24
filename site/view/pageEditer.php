@@ -25,31 +25,56 @@
                 background-color: #dddddd;
             }
         </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     </head>
     <body>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Pseudo</th>
-            <th>Droit</th>
-            <th>Slogan</th>
-        </tr>
-        <tr>
-            <form action="index.php?action=pageEditor" method="POST">
-                <td><input type="text"></td>
-                <td><input type="text" name="valeur2"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td></td>
-                <input type="submit" value="Modifier">
-            </form>
-        </tr>
-    </table>
+
+    <!-- tout le tableau-->
+    <div class="container">
+        <div class="row">
+            <table class="table-responsive">
+                <tr>
+                    <th>ID</th>
+                    <th>Pseudo</th>
+                    <th>Pays</th>
+                    <th>Ville</th>
+                    <th>Droit de l'enfant</th>
+                    <th>Etablissement scolaire</th>
+                    <th>Team VMPJ</th>
+                    <th>Photo</th>
+                </tr>
+
+                <tr>
+                    <form action="index.php?action=pageEditer" method="POST">
+                        <td></td>
+                        <td><input type="text" name="pseudo"></td>
+                        <td><input type="text" name="valeur2"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td></td>
+
+                        <!--boutton enregistrer-->
+                        <div style="margin-top: 15px;margin-left:15px;">
+                            <input type="submit" value="Enregistrer">
+                        </div>
+                    </form>
+
+                </tr>
+            </table>
+            <!--boutton annuler-->
+            <div style="text-align: right; margin-top: 15px;">
+                <input type="submit" value="Annuler">
+            </div>
+
+
+        </div>
+
+
+
     </body>
     </html>
 <?php
-
 
 

@@ -38,12 +38,20 @@ function pageEditerCode($id)
     }
 }
 
+
 /**
  *
  */
-function editPage(){
-    $_GET['action'] = 'editPage';
-    require "view/pageEditer.php";
+function pageEditer()
+{
+    $_POST['action'] = "pageEditer";
+    $pseudo = @$_POST["pseudo"];
+
+    if (isset($pseudo)) {
+        donneeEnvoyerJSON($pseudo);
+        home();
+    } else
+        require "view/pageEditer.php";
 }
 
 /**
