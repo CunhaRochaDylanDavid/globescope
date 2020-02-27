@@ -28,7 +28,7 @@ if (isset($_GET['action'])) {
             pageEditerCode($_POST);
             break;
         case 'editPage':
-            editPage();
+            pageEditer();
             break;
         case 'edit':
             tableData();
