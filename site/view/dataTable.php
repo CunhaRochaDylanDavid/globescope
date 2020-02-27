@@ -12,6 +12,9 @@
     <title>Globescope - Login</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="view/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="view/css/styleSideBar.css">
     <style>
         body {
             background-image: url("view/images/MilkyWay.jpg");
@@ -37,93 +40,88 @@
     </style>
 </head>
 <body>
-<form method="post" action="index.php?action=pageEditer">
-    <div class="row">
-        <div class="col-md-2">
-            <div class="wrapper">
-                <!-- Sidebar -->
-                <nav id="sidebar">
-                    <div class="sidebar-header">
-                        <h3>Bootstrap Sidebar</h3>
-                    </div>
-
-                    <ul class="list-unstyled components">
-                        <p>Dummy Heading</p>
-                        <li class="active">
-                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="#">Home 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Home 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Home 3</a>
-                                </li>
-                            </ul>
+<div class="row">
+    <div class="col-md-2 wrapper d-flex align-items-stretch">
+        <nav id="sidebar" class="active">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only" style="color: white">Toggle Menu</span>
+                </button>
+            </div>
+            <div class="p-4">
+                <h1><a href="index.html" class="logo">Filtre</a></h1>
+                <form method="post" action="index.php?action=edit">
+                    <ul class="list-unstyled components mb-5">
+                        <li>
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control" placeholder="Pseudo">
+                            </div>
                         </li>
                         <li>
-                            <a href="#">About</a>
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control" placeholder="Pseudo">
+                            </div>
                         </li>
                         <li>
-                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="#">Page 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Page 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Page 3</a>
-                                </li>
-                            </ul>
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control" placeholder="Pseudo">
+                            </div>
                         </li>
                         <li>
-                            <a href="#">Portfolio</a>
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control" placeholder="Pseudo">
+                            </div>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control" placeholder="Pseudo">
+                            </div>
+                        </li>
+                        <li class="text-center">
+                            <input type="submit" class="btn-primary" value="Rechercher">
                         </li>
                     </ul>
-                </nav>
-
+                </form>
             </div>
-        </div>
-        <div class="col-md-8 text-center">
-            <table style="color: white" class="text-center">
-                <tr>
-                    <th>ID</th>
-                    <th>Pseudo</th>
-                    <th>Droit</th>
-                    <th>Slogan</th>
-                </tr>
-                <?php
-                foreach ($_GET['data'] as $userData) {
-                    foreach ($userData as $value) {
-                        echo '<tr>' . '<td>' . $value->IDPlace . '</td>', '<td>' . $value->Pseudo . '</td>',
-                            '<td>' . $value->Droit . '</td>', '<td>' . $value->Slogan . '</td>' . '</tr>';
-                    }
-                }
-                ?>
-            </table>
-        </div>
-        <div class="col-md-2">
-            <table>
-                <tr>
-                    <th style="border: 0px"></th>
-                </tr>
-                <?php
-                foreach ($_GET['data'] as $userData) {
-                    foreach ($userData as $value) {
-                        echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&code=' . $value->IDPlace . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
-                    }
-                }
-                ?>
-            </table>
-        </div>
+        </nav>
     </div>
-</form>
+    <div class="col-md-8 text-center">
+        <table style="color: white" class="text-center">
+            <tr>
+                <th>ID</th>
+                <th>Pseudo</th>
+                <th>Droit</th>
+                <th>Slogan</th>
+            </tr>
+            <?php
+            foreach ($_GET['data'] as $userData) {
+                foreach ($userData as $value) {
+                    echo '<tr>' . '<td>' . $value->IDPlace . '</td>', '<td>' . $value->Pseudo . '</td>',
+                        '<td>' . $value->Droit . '</td>', '<td>' . $value->Slogan . '</td>' . '</tr>';
+                }
+            }
+            ?>
+        </table>
+    </div>
+    <div class="col-md-2">
+        <table>
+            <tr>
+                <th style="border: 0px"></th>
+            </tr>
+            <?php
+            foreach ($_GET['data'] as $userData) {
+                foreach ($userData as $value) {
+                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&code=' . $value->IDPlace . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
+                }
+            }
+            ?>
+        </table>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 <?php
