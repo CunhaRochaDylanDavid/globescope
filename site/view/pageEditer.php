@@ -8,6 +8,7 @@
 ?>
     <html>
     <head>
+        <link rel="stylesheet" href="view/css/bootstrap.min.css">
         <style>
             table {
                 font-family: arial, sans-serif;
@@ -36,12 +37,12 @@
         </tr>
         <tr>
             <form action="index.php?action=pageEditor" method="POST">
-                <td><input type="text"></td>
+                <td><input type="text" name="valeur1"></td>
                 <td><input type="text" name="valeur2"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
+                <td><input type="text" name="valeur3"></td>
+                <td><input type="text" name="valeur4"></td>
+                <td><input type="text" name="valeur5"></td>
+                <td><input type="text" name="valeur6"></td>
                 <td></td>
                 <input type="submit" value="Modifier">
             </form>

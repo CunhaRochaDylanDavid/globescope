@@ -65,9 +65,4 @@ function getData()
 
 function getGoodData($id)
 {
-    foreach ($id['data'] as $userID) {
-        foreach ($userID as $value) {
-
-        }
-    }
 }
