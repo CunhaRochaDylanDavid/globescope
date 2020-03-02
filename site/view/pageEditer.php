@@ -53,9 +53,9 @@
                     <tr>
                         <form action="index.php?action=pageEditer" method="POST">
                             <td><?= $_GET['id']; ?></td>
-                            <td><?= $_GET['pseudo']; ?></td>
-                            <td><?= $_GET['droit']; ?></td>
-                            <td><?= $_GET['slogan']; ?></td>
+                            <td><input class="form-control form-control-sm" value="<?= $_GET['pseudo']; ?>"></td>
+                            <td><input class="form-control form-control-sm" value="<?= $_GET['droit']; ?>"></td>
+                            <td><input class="form-control form-control-sm" value="<?= $_GET['slogan']; ?>"></td>
                         </form>
                     </tr>
                 </table>
