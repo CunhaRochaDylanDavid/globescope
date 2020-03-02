@@ -24,7 +24,7 @@ function checkLogin($form)
 }
 
 
-function donneeEnvoyerJSON($element)
+function donneeEnvoyerJSON()
 {
 //chemin d'accès au fichier json
     $fileJson = 'model/data/images.json';

@@ -29,13 +29,11 @@ function login()
 
 
 /**
- *
- */
+*
+*/
 function pageEditerCode($id)
 {
-    if (getGoodData($id)) {
-        editPage();
-    }
+   echo $id;
 }
 
 
@@ -44,11 +42,11 @@ function pageEditerCode($id)
  */
 function pageEditer()
 {
-    $_POST['action'] = "pageEditer";
+    $_GET['action'] = "pageEditer";
     $pseudo = @$_POST["pseudo"];
 
     if (isset($pseudo)) {
-        donneeEnvoyerJSON($pseudo);
+        donneeEnvoyerJSON();
         home();
     } else
         require "view/pageEditer.php";

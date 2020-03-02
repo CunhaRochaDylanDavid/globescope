@@ -117,7 +117,7 @@
                 <?php
                 foreach ($_GET['data'] as $userData) {
                     foreach ($userData as $value) {
-                        echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&code=' . $value->IDPlace . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
+                        echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&id=' . $value->IDPlace . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
                     }
                 }
                 ?>

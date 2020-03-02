@@ -25,7 +25,7 @@ if (isset($_GET['action'])) {
             logout();
             break;
         case 'pageEditer':
-            pageEditerCode($_POST);
+            pageEditerCode($_GET["code"]);
             break;
         case 'editPage':
             pageEditer();
