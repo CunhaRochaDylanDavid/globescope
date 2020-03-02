@@ -37,35 +37,22 @@
                     <tr>
                         <th>ID</th>
                         <th>Pseudo</th>
-                        <th>Pays</th>
-                        <th>Ville</th>
-                        <th>Droit de l'enfant</th>
-                        <th>Etablissement scolaire</th>
-                        <th>Team VMPJ</th>
-                        <th>Photo</th>
+                        <th>Droit</th>
+                        <th>Slogan</th>
                     </tr>
 
                     <tr>
                         <form action="index.php?action=pageEditer" method="POST">
-                            <td></td>
-                            <td><input type="text" name="pseudo"></td>
-                            <td><input type="text" name="valeur2"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td></td>
-
-                            <!--boutton enregistrer-->
-                            <div style="margin-top: 15px;margin-left:15px;">
-                                <input type="submit" value="Enregistrer">
-                            </div>
+                            <td><?= $_GET['code'];?></td>
+                            <td><?= $_GET['pseudo'];?></td>
+                            <td><?= $_GET['droit'];?></td>
+                            <td><?= $_GET['slogan'];?></td>
                         </form>
-
                     </tr>
                 </table>
-                <!--boutton annuler-->
+                <!--boutton enregistrer-->
                 <div style="text-align: right; margin-top: 15px;">
+                    <input type="submit" value="Enregistrer">
                     <input type="submit" value="Annuler">
                 </div>
             </div>

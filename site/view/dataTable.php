@@ -46,7 +46,6 @@
             <div class="custom-menu">
                 <button type="button" id="sidebarCollapse" class="btn btn-primary">
                     <i class="fa fa-bars"></i>
-                    <span class="sr-only" style="color: white">Toggle Menu</span>
                 </button>
             </div>
             <div class="p-4">
@@ -54,28 +53,21 @@
                 <form method="post" action="index.php?action=edit">
                     <ul class="list-unstyled components mb-5">
                         <li>
+                            <label><b>Pseudo</b></label>
                             <div class="form-group d-flex">
                                 <input type="text" class="form-control" placeholder="Pseudo">
                             </div>
                         </li>
                         <li>
+                            <label><b>Droit</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" class="form-control" placeholder="Pseudo">
+                                <input type="text" class="form-control" placeholder="Droit">
                             </div>
                         </li>
                         <li>
+                            <label><b>Slogan</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" class="form-control" placeholder="Pseudo">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-group d-flex">
-                                <input type="text" class="form-control" placeholder="Pseudo">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-group d-flex">
-                                <input type="text" class="form-control" placeholder="Pseudo">
+                                <input type="text" class="form-control" placeholder="Slogan">
                             </div>
                         </li>
                         <li class="text-center">
@@ -112,7 +104,7 @@
             <?php
             foreach ($_GET['data'] as $userData) {
                 foreach ($userData as $value) {
-                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&code=' . $value->IDPlace . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
+                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&code=' . $value->IDPlace . '&pseudo=' . $value->Pseudo .'&droit=' . $value->Droit .'&slogan=' . $value->Slogan .'" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
                 }
             }
             ?>
