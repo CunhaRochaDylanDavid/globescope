@@ -12,6 +12,12 @@
     <title>Globescope - Login</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="view/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="view/css/styleSideBar.css">
     <style>
         body {
             background-image: url("view/images/MilkyWay.jpg");
@@ -37,7 +43,6 @@
     </style>
 </head>
 <body>
-<<<<<<< HEAD
 <div class="row">
     <div class="col-md-2 wrapper d-flex align-items-stretch">
         <nav id="sidebar" class="active">
@@ -47,7 +52,7 @@
                 </button>
             </div>
             <div class="p-4">
-                <h1><a href="index.html" class="logo">Filtre</a></h1>
+                <h1 style="color: white">Filtre</h1>
                 <form method="post" action="index.php?action=edit">
                     <ul class="list-unstyled components mb-5">
                         <li>
@@ -70,78 +75,26 @@
                         </li>
                         <li class="text-center">
                             <input type="submit" class="btn-primary" value="Rechercher">
-=======
-<form method="post" action="index.php?action=pageEditer">
-    <div class="row">
-        <div class="col-md-2">
-            <div class="wrapper">
-                <!-- Sidebar -->
-                <nav id="sidebar">
-                    <div class="sidebar-header">
-                        <h3>Bootstrap Sidebar</h3>
-                    </div>
-
-                    <ul class="list-unstyled components">
-                        <p>Dummy Heading</p>
-                        <li class="active">
-                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="#">Home 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Home 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Home 3</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="#">Page 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Page 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Page 3</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
->>>>>>> a0035ac4f774b9c874bb447d776c4351f55db14d
                         </li>
                     </ul>
-                </nav>
-
+                </form>
             </div>
-        </div>
-        <div class="col-md-8 text-center">
-            <table style="color: white" class="text-center">
-                <tr>
-                    <th>ID</th>
-                    <th>Pseudo</th>
-                    <th>Droit</th>
-                    <th>Slogan</th>
-                </tr>
-                <?php
-                foreach ($_GET['data'] as $userData) {
-                    foreach ($userData as $value) {
-                        echo '<tr>' . '<td>' . $value->IDPlace . '</td>', '<td>' . $value->Pseudo . '</td>',
-                            '<td>' . $value->Droit . '</td>', '<td>' . $value->Slogan . '</td>' . '</tr>';
-                    }
+        </nav>
+    </div>
+    <div class="col-md-8 text-center">
+        <table style="color: white" class="text-center">
+            <tr>
+                <th>ID</th>
+                <th>Pseudo</th>
+                <th>Droit</th>
+                <th>Slogan</th>
+            </tr>
+            <?php
+            foreach ($_GET['data'] as $userData) {
+                foreach ($userData as $value) {
+                    echo '<tr>' . '<td>' . $value->IDPlace . '</td>', '<td>' . $value->Pseudo . '</td>',
+                        '<td>' . $value->Droit . '</td>', '<td>' . $value->Slogan . '</td>' . '</tr>';
                 }
-<<<<<<< HEAD
             }
             ?>
         </table>
@@ -154,27 +107,16 @@
             <?php
             foreach ($_GET['data'] as $userData) {
                 foreach ($userData as $value) {
-                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&code=' . $value->IDPlace . '&pseudo=' . $value->Pseudo .'&droit=' . $value->Droit .'&slogan=' . $value->Slogan .'" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
-=======
-                ?>
-            </table>
-        </div>
-        <div class="col-md-2">
-            <table>
-                <tr>
-                    <th style="border: 0px"></th>
-                </tr>
-                <?php
-                foreach ($_GET['data'] as $userData) {
-                    foreach ($userData as $value) {
-                        echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&id=' . $value->IDPlace . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
-                    }
->>>>>>> a0035ac4f774b9c874bb447d776c4351f55db14d
+                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&id=' . $value->IDPlace . '&pseudo=' . $value->Pseudo .'&droit=' . $value->Droit .'&slogan=' . $value->Slogan .'" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
                 }
-                ?>
-            </table>
-        </div>
+            }
+            ?>
+        </table>
     </div>
-</form>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 <?php
