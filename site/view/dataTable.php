@@ -12,9 +12,6 @@
     <title>Globescope - Login</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="view/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="view/css/styleSideBar.css">
     <style>
         body {
             background-image: url("view/images/MilkyWay.jpg");
@@ -40,6 +37,7 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
 <div class="row">
     <div class="col-md-2 wrapper d-flex align-items-stretch">
         <nav id="sidebar" class="active">
@@ -72,26 +70,78 @@
                         </li>
                         <li class="text-center">
                             <input type="submit" class="btn-primary" value="Rechercher">
+=======
+<form method="post" action="index.php?action=pageEditer">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="wrapper">
+                <!-- Sidebar -->
+                <nav id="sidebar">
+                    <div class="sidebar-header">
+                        <h3>Bootstrap Sidebar</h3>
+                    </div>
+
+                    <ul class="list-unstyled components">
+                        <p>Dummy Heading</p>
+                        <li class="active">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li>
+                                    <a href="#">Home 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Home 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Home 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li>
+                                    <a href="#">Page 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Page 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Page 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+>>>>>>> a0035ac4f774b9c874bb447d776c4351f55db14d
                         </li>
                     </ul>
-                </form>
+                </nav>
+
             </div>
-        </nav>
-    </div>
-    <div class="col-md-8 text-center">
-        <table style="color: white" class="text-center">
-            <tr>
-                <th>ID</th>
-                <th>Pseudo</th>
-                <th>Droit</th>
-                <th>Slogan</th>
-            </tr>
-            <?php
-            foreach ($_GET['data'] as $userData) {
-                foreach ($userData as $value) {
-                    echo '<tr>' . '<td>' . $value->IDPlace . '</td>', '<td>' . $value->Pseudo . '</td>',
-                        '<td>' . $value->Droit . '</td>', '<td>' . $value->Slogan . '</td>' . '</tr>';
+        </div>
+        <div class="col-md-8 text-center">
+            <table style="color: white" class="text-center">
+                <tr>
+                    <th>ID</th>
+                    <th>Pseudo</th>
+                    <th>Droit</th>
+                    <th>Slogan</th>
+                </tr>
+                <?php
+                foreach ($_GET['data'] as $userData) {
+                    foreach ($userData as $value) {
+                        echo '<tr>' . '<td>' . $value->IDPlace . '</td>', '<td>' . $value->Pseudo . '</td>',
+                            '<td>' . $value->Droit . '</td>', '<td>' . $value->Slogan . '</td>' . '</tr>';
+                    }
                 }
+<<<<<<< HEAD
             }
             ?>
         </table>
@@ -105,15 +155,26 @@
             foreach ($_GET['data'] as $userData) {
                 foreach ($userData as $value) {
                     echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&code=' . $value->IDPlace . '&pseudo=' . $value->Pseudo .'&droit=' . $value->Droit .'&slogan=' . $value->Slogan .'" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
+=======
+                ?>
+            </table>
+        </div>
+        <div class="col-md-2">
+            <table>
+                <tr>
+                    <th style="border: 0px"></th>
+                </tr>
+                <?php
+                foreach ($_GET['data'] as $userData) {
+                    foreach ($userData as $value) {
+                        echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&id=' . $value->IDPlace . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
+                    }
+>>>>>>> a0035ac4f774b9c874bb447d776c4351f55db14d
                 }
-            }
-            ?>
-        </table>
+                ?>
+            </table>
+        </div>
     </div>
-</div>
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+</form>
 </body>
 <?php
