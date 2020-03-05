@@ -29,27 +29,12 @@ function login()
 
 
 /**
-*
-*/
-function pageEditerCode($id)
-{
-   echo $id;
-}
-
-
-/**
  *
  */
 function pageEditer()
 {
     $_GET['action'] = "pageEditer";
-    $pseudo = @$_POST["pseudo"];
-
-    if (isset($pseudo)) {
-        donneeEnvoyerJSON();
-        home();
-    } else
-        require "view/pageEditer.php";
+    require "view/pageEditer.php";
 }
 
 /**
@@ -64,12 +49,19 @@ function logout()
 /**
  *
  */
-function tableData()
+function dataTable($filtre)
 {
-    $_GET['action'] = 'edit';
-    $produit_content = getData();
-    $_GET['data'] = $produit_content;
-    require "view/dataTable.php";
+    if (filtreRecherche($filtre)) {
+        $_GET['action'] = 'dataTable';
+        $produit_content = filtreRecherche();
+        $_GET['data'] = $produit_content;
+        require "view/dataTable.php";
+    } else {
+        $_GET['action'] = 'dataTable';
+        $produit_content = getData();
+        $_GET['data'] = $produit_content;
+        require "view/dataTable.php";
+    }
 }
 
 /**
@@ -78,7 +70,7 @@ function tableData()
 function checkLoginFunction($form)
 {
     if (checkLogin($form)) {
-        tableData();
+        dataTable();
     } else {
         login();
     }

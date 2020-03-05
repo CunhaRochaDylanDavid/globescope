@@ -53,24 +53,24 @@
             </div>
             <div class="p-4">
                 <h1 style="color: white">Filtre</h1>
-                <form method="post" action="index.php?action=edit">
+                <form method="post" action="index.php?action=dataTable">
                     <ul class="list-unstyled components mb-5">
                         <li>
                             <label><b>Pseudo</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" class="form-control" placeholder="Pseudo">
+                                <input type="text" name="pseudo" class="form-control" placeholder="Pseudo">
                             </div>
                         </li>
                         <li>
                             <label><b>Droit</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" class="form-control" placeholder="Droit">
+                                <input type="text" name="droit" class="form-control" placeholder="Droit">
                             </div>
                         </li>
                         <li>
                             <label><b>Slogan</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" class="form-control" placeholder="Slogan">
+                                <input type="text" name="slogan" class="form-control" placeholder="Slogan">
                             </div>
                         </li>
                         <li class="text-center">
@@ -107,7 +107,7 @@
             <?php
             foreach ($_GET['data'] as $userData) {
                 foreach ($userData as $value) {
-                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=editPage&id=' . $value->IDPlace . '&pseudo=' . $value->Pseudo .'&droit=' . $value->Droit .'&slogan=' . $value->Slogan .'" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
+                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&pseudo=' . $value->Pseudo .'&droit=' . $value->Droit .'&slogan=' . $value->Slogan .'" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
                 }
             }
             ?>

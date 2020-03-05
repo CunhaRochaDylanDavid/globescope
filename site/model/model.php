@@ -23,38 +23,6 @@ function checkLogin($form)
     }
 }
 
-
-function donneeEnvoyerJSON()
-{
-//chemin d'accès au fichier json
-    $fileJson = 'model/data/images.json';
-
-    //cette condition va vérifier si il y a deja des données dans le fichier si oui alors rajoute un nouveau tableau en laissant celui qui y est/sont deja sinon inscrit le tableau dans le fichier
-    if (file_get_contents($fileJson) == "") {
-
-        //Attention les crochets dans se cas sont importants car sinon il va ajouter des numero pour chaque tableau ajouter
-        $data = array([
-            "mer" => @$_POST['valeur2'],
-
-        ]);
-        $dataEncode = json_encode($data, true);
-
-        file_put_contents($fileJson, $dataEncode);
-    } else {
-
-        $data = array(
-            "mer" => @$_POST['valeur2'],
-
-        );
-        $tempArray = file_get_contents($fileJson);
-        $tempArray = json_decode($tempArray, true);
-        array_push($tempArray, $data);
-        $data = json_encode($tempArray, true);
-        file_put_contents($fileJson, $data);
-
-    }
-}
-
 function getData()
 {
     $current_file = file_get_contents("model/data/images.json");
@@ -63,6 +31,21 @@ function getData()
     return $array_data;
 }
 
-function getGoodData($id)
+function filtreRecherche($filtre)
 {
+    if (file_exists("model/data/images.json")) {
+        $kids = json_decode(file_get_contents("model/data/images.json"), true);
+        if (isset($filtre['pseudo'])) {
+            $i = 0;
+            foreach ($kids as $kid) {
+                if (!stristr($kid['Pseudo'], $filtre['pseudo'], 0)) {
+                    unset($kids[$i]);
+                }
+                $i++;
+            }
+            return $kids;
+        }
+    } else {
+        return false;
+    }
 }

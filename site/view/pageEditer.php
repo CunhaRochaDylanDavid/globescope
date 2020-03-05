@@ -38,11 +38,11 @@
     </head>
     <body>
     <!-- tout le tableau-->
-    <div class="container-fluid align-middle">
-        <div class="row align-middle">
+    <div class="container-fluid">
+        <div class="row">
             <div class="col-md-2">
             </div>
-            <div class="col-md-8 text-center align-middle">
+            <div class="col-md-8 text-center" style="margin-top: 400px">
                 <table class="text-center">
                     <tr style="border: black solid 2px">
                         <th>ID</th>
@@ -61,7 +61,7 @@
                 </table>
                 <div class="text-right" style="margin-top: 10px">
                     <input type="submit" value="Enregistrer" class="btn btn-secondary">
-                    <a href="index.php?action=edit" class="btn btn-secondary">Annuler</a>
+                    <a href="index.php?action=dataTable" class="btn btn-secondary">Annuler</a>
                 </div>
             </div>
             <div class="col-md-2">
