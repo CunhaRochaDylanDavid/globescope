@@ -38,11 +38,11 @@
     </head>
     <body>
     <!-- tout le tableau-->
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid align-middle">
+        <div class="row align-middle">
             <div class="col-md-2">
             </div>
-            <div class="col-md-8 text-center">
+            <div class="col-md-8 text-center align-middle">
                 <table class="text-center">
                     <tr style="border: black solid 2px">
                         <th>ID</th>
