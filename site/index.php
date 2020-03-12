@@ -15,21 +15,27 @@ if (isset($_GET['action'])) {
         case 'home' :
             home();
             break;
+
         case 'login':
             login();
             break;
+
         case 'checkLogin' :
             checkLoginFunction($_POST);
             break;
+
         case 'logout':
             logout();
             break;
+
         case 'pageEditer':
             pageEditer();
             break;
+
         case 'dataTable':
-            dataTable($_POST);
+            dataTable();
             break;
+
         default :
             home();
     }

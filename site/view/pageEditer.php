@@ -51,18 +51,23 @@
                         <th>Slogan</th>
                     </tr>
                     <tr>
-                        <form action="index.php?action=pageEditer" method="POST">
-                            <td><?= $_GET['id']; ?></td>
-                            <td><input class="form-control form-control-sm" value="<?= $_GET['pseudo']; ?>"></td>
-                            <td><input class="form-control form-control-sm" value="<?= $_GET['droit']; ?>"></td>
+                        <form action="index.php?action=pageEditer& ?>" method="POST">
+                            <td><input name="idPageEditer" value="<?= $_GET['id']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="pseudoPageEditer"
+                                       value="<?= $_GET['pseudo']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="droitPageEditer"
+                                       value="<?= $_GET['droit']; ?>"></td>
                             <td><input class="form-control form-control-sm" value="<?= $_GET['slogan']; ?>"></td>
-                        </form>
+
+
                     </tr>
                 </table>
                 <div class="text-right" style="margin-top: 10px">
                     <input type="submit" value="Enregistrer" class="btn btn-secondary">
                     <a href="index.php?action=dataTable" class="btn btn-secondary">Annuler</a>
+
                 </div>
+                </form>
             </div>
             <div class="col-md-2">
             </div>

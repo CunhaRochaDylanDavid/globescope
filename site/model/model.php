@@ -23,6 +23,35 @@ function checkLogin($form)
     }
 }
 
+
+
+
+function donneeEnvoyerJSON()
+{
+//chemin d'accès au fichier json
+    $path = file_get_contents('model/data/images.json');
+    $tempArray = json_decode($path, true);
+
+
+    $data = array(
+        "IDPlace" =>@$_POST['idPageEditer'],
+        "Pseudo" => @$_POST['pseudoPageEditer'],
+        "Droit" => @$_POST['droitPageEditer']
+    );
+
+
+    foreach ($tempArray as $item) {
+        $modification[@$item['IDPlace']] = $item;
+        $modification[$data["IDPlace"]]['Pseudo'] = $data['Pseudo'];
+    }
+
+
+    file_put_contents("model/data/images.json", json_encode($modification));
+
+
+}
+
+
 function getData()
 {
     $current_file = file_get_contents("model/data/images.json");
@@ -31,6 +60,8 @@ function getData()
     return $array_data;
 }
 
+
+/*
 function filtreRecherche($filtre)
 {
     if (file_exists("model/data/images.json")) {
@@ -49,3 +80,4 @@ function filtreRecherche($filtre)
         return false;
     }
 }
+*/
