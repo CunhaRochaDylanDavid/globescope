@@ -85,15 +85,24 @@
         <table style="color: white" class="text-center">
             <tr>
                 <th>ID</th>
+                <th>IDImage</th>
+                <th>mer</th>
+                <th>lat</th>
+                <th>lon</th>
                 <th>Pseudo</th>
                 <th>Droit</th>
                 <th>Slogan</th>
+                <th>ImageOK</th>
+                <th>Pays</th>
+                <th>Ville</th>
+                <th>Equipe</th>
+                <th>Media</th>
             </tr>
             <?php
             foreach ($_GET['data'] as $userData) {
                 foreach ($userData as $value) {
-                    echo '<tr>' . '<td>' . $value->IDPlace . '</td>', '<td>' . $value->Pseudo . '</td>',
-                        '<td>' . $value->Droit . '</td>', '<td>' . $value->Slogan . '</td>' . '</tr>';
+                    echo '<tr>' . '<td>' . $value->IDPlace . '</td>', '<td>' . $value->IDImage . '</td>',
+                        '<td>' . $value->mer . '</td>', '<td>' . $value->lat . '</td>', '<td>' . $value->lon . '</td>', '<td>' . $value->Pseudo . '</td>', '<td>' . $value->Droit . '</td>', '<td>' . $value->Slogan . '</td>', '<td>' . $value->ImageOK . '</td>', '<td>' . $value->Pays . '</td>' . '</tr>';
                 }
             }
             ?>
@@ -107,7 +116,7 @@
             <?php
             foreach ($_GET['data'] as $userData) {
                 foreach ($userData as $value) {
-                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&pseudo=' . $value->Pseudo .'&droit=' . $value->Droit .'&slogan=' . $value->Slogan .'" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
+                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&idImage=' . $value->IDImage .'&mer=' . $value->mer .'&lat=' . $value->lat .'&lon=' . $value->lon . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan . '&imageOK=' . $value->ImageOK . '&pays=' . $value->Pays . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
                 }
             }
             ?>

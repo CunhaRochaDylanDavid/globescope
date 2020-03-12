@@ -43,30 +43,43 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-8 text-center" style="margin-top: 400px">
-                <table class="text-center">
-                    <tr style="border: black solid 2px">
-                        <th>ID</th>
-                        <th>Pseudo</th>
-                        <th>Droit</th>
-                        <th>Slogan</th>
-                    </tr>
-                    <tr>
-                        <form action="index.php?action=pageEditer& ?>" method="POST">
-                            <td><input name="idPageEditer" value="<?= $_GET['id']; ?>"></td>
+                <form action="index.php?action=pageEditer& ?>" method="POST">
+                    <table class="text-center">
+                        <tr style="border: black solid 2px">
+                            <th>ID</th>
+                            <th>IDImage</th>
+                            <th>mer</th>
+                            <th>lat</th>
+                            <th>lon</th>
+                            <th>Pseudo</th>
+                            <th>Droit</th>
+                            <th>Slogan</th>
+                            <th>ImageOK</th>
+                            <th>Pays</th>
+                            <th>Ville</th>
+                            <th>Equipe</th>
+                            <th>Media</th>
+                        </tr>
+                        <tr>
+                            <td><input name="idPageEditer" disabled value="<?= $_GET['id']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="pseudoPageEditer"
-                                       value="<?= $_GET['pseudo']; ?>"></td>
+                                       value="<?= $_GET['idImage']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="droitPageEditer"
-                                       value="<?= $_GET['droit']; ?>"></td>
+                                       value="<?= $_GET['mer']; ?>"></td>
+                            <td><input class="form-control form-control-sm" value="<?= $_GET['lat']; ?>"></td>
+                            <td><input class="form-control form-control-sm" value="<?= $_GET['lon']; ?>"></td>
+                            <td><input class="form-control form-control-sm" value="<?= $_GET['pseudo']; ?>"></td>
+                            <td><input class="form-control form-control-sm" value="<?= $_GET['droit']; ?>"></td>
                             <td><input class="form-control form-control-sm" value="<?= $_GET['slogan']; ?>"></td>
+                            <td><input class="form-control form-control-sm" value="<?= $_GET['imageOK']; ?>"></td>
+                            <td><input class="form-control form-control-sm" value="<?= $_GET['pays']; ?>"></td>
+                        </tr>
+                    </table>
+                    <div class="text-right" style="margin-top: 10px">
+                        <input type="submit" value="Enregistrer" class="btn btn-secondary">
+                        <a href="index.php?action=dataTable" class="btn btn-secondary">Annuler</a>
 
-
-                    </tr>
-                </table>
-                <div class="text-right" style="margin-top: 10px">
-                    <input type="submit" value="Enregistrer" class="btn btn-secondary">
-                    <a href="index.php?action=dataTable" class="btn btn-secondary">Annuler</a>
-
-                </div>
+                    </div>
                 </form>
             </div>
             <div class="col-md-2">
