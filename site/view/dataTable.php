@@ -101,8 +101,22 @@
             <?php
             foreach ($_GET['data'] as $userData) {
                 foreach ($userData as $value) {
-                    echo '<tr>' . '<td>' . $value->IDPlace . '</td>', '<td>' . $value->IDImage . '</td>',
-                        '<td>' . $value->mer . '</td>', '<td>' . $value->lat . '</td>', '<td>' . $value->lon . '</td>', '<td>' . $value->Pseudo . '</td>', '<td>' . $value->Droit . '</td>', '<td>' . $value->Slogan . '</td>', '<td>' . $value->ImageOK . '</td>', '<td>' . $value->Pays . '</td>' . '</tr>';
+                    echo '<tr>' .
+                        '<td>' . $value->IDPlace . '</td>',
+                        '<td>' . $value->IDImage . '</td>',
+                        '<td>' . $value->mer . '</td>',
+                        '<td>' . $value->lat . '</td>',
+                        '<td>' . $value->lon . '</td>',
+                        '<td>' . $value->Pseudo . '</td>',
+                        '<td>' . $value->Droit . '</td>',
+                        '<td>' . $value->Slogan . '</td>',
+                        '<td>' . $value->provenance . '</td>',
+                        '<td>' . $value->ImageOK . '</td>',
+                        '<td>' . $value->Pays . '</td>',
+                        '<td>' . $value->Ville . '</td>',
+                        '<td>' . $value->Equipe . '</td>',
+                        '<td>' . $value->Media . '</td>' .
+                        '</tr>';
                 }
             }
             ?>
@@ -116,7 +130,7 @@
             <?php
             foreach ($_GET['data'] as $userData) {
                 foreach ($userData as $value) {
-                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&idImage=' . $value->IDImage .'&mer=' . $value->mer .'&lat=' . $value->lat .'&lon=' . $value->lon . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan . '&imageOK=' . $value->ImageOK . '&pays=' . $value->Pays . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
+                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&idImage=' . $value->IDImage .'&mer=' . $value->mer .'&lat=' . $value->lat .'&lon=' . $value->lon . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan .'&provenance=' . $value->provenance . '&imageOK=' . $value->ImageOK . '&pays=' . $value->Pays .'&ville=' . $value->Ville .'&equipe=' . $value->Equipe .'&media=' . $value->Media . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
                 }
             }
             ?>

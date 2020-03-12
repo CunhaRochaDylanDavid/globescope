@@ -28,21 +28,46 @@ function checkLogin($form)
 
 function donneeEnvoyerJSON()
 {
+
+
 //chemin d'accès au fichier json
     $path = file_get_contents('model/data/images.json');
     $tempArray = json_decode($path, true);
 
 
     $data = array(
-        "IDPlace" =>@$_POST['idPageEditer'],
+        "IDPlace" => @$_POST['idPageEditer'],
+        "IDImage" => @$_POST['idImagePageEditer'],
+        "mer" => @$_POST['merPageEditer'],
+        "lat" => @$_POST['latPageEditer'],
+        "lon" => @$_POST['lonPageEditer'],
         "Pseudo" => @$_POST['pseudoPageEditer'],
-        "Droit" => @$_POST['droitPageEditer']
+        "Droit" => @$_POST['droitPageEditer'],
+        "Slogan" => @$_POST['sloganPageEditer'],
+        "Provenance" => @$_POST['provenancePageEditer'],
+        "ImageOK" => @$_POST['imageOKPageEditer'],
+        "Pays" => @$_POST['paysPageEditer'],
+        "Ville" => @$_POST['villePageEditer'],
+        "Equipe" => @$_POST['equipePageEditer'],
+        "Media" => @$_POST['mediaPageEditer']
     );
 
 
     foreach ($tempArray as $item) {
         $modification[@$item['IDPlace']] = $item;
-        $modification[$data["IDPlace"]]['Pseudo'] = $data['Pseudo'];
+        $modification[$data["IDPlace"]]['IDImage'] = $data['idImagePageEditer'];
+        $modification[$data["IDPlace"]]['mer'] = $data['merPageEditer'];
+        $modification[$data["IDPlace"]]['lat'] = $data['latPageEditer'];
+        $modification[$data["IDPlace"]]['lon'] = $data['lonPageEditer'];
+        $modification[$data["IDPlace"]]['Pseudo'] = $data['pseudoPageEditer'];
+        $modification[$data["IDPlace"]]['Droit'] = $data['droitPageEditer'];
+        $modification[$data["IDPlace"]]['Slogan'] = $data['sloganPageEditer'];
+        $modification[$data["IDPlace"]]['Provenance'] = $data['provenancePageEditer'];
+        $modification[$data["IDPlace"]]['ImageOK'] = $data['imageOKPageEditer'];
+        $modification[$data["IDPlace"]]['Pays'] = $data['paysPageEditer'];
+        $modification[$data["IDPlace"]]['Ville'] = $data['villePageEditer'];
+        $modification[$data["IDPlace"]]['Equipe'] = $data['equipePageEditer'];
+        $modification[$data["IDPlace"]]['Media'] = $data['mediaPageEditer'];
     }
 
 
@@ -50,6 +75,8 @@ function donneeEnvoyerJSON()
 
 
 }
+
+
 
 
 function getData()

@@ -62,17 +62,19 @@
                         </tr>
                         <tr>
                             <td><input name="idPageEditer" disabled value="<?= $_GET['id']; ?>"></td>
-                            <td><input class="form-control form-control-sm" name="pseudoPageEditer"
-                                       value="<?= $_GET['idImage']; ?>"></td>
-                            <td><input class="form-control form-control-sm" name="droitPageEditer"
-                                       value="<?= $_GET['mer']; ?>"></td>
-                            <td><input class="form-control form-control-sm" value="<?= $_GET['lat']; ?>"></td>
-                            <td><input class="form-control form-control-sm" value="<?= $_GET['lon']; ?>"></td>
-                            <td><input class="form-control form-control-sm" value="<?= $_GET['pseudo']; ?>"></td>
-                            <td><input class="form-control form-control-sm" value="<?= $_GET['droit']; ?>"></td>
-                            <td><input class="form-control form-control-sm" value="<?= $_GET['slogan']; ?>"></td>
-                            <td><input class="form-control form-control-sm" value="<?= $_GET['imageOK']; ?>"></td>
-                            <td><input class="form-control form-control-sm" value="<?= $_GET['pays']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="idImagePageEditer" value="<?= $_GET['idImage']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="merPageEditer" value="<?= $_GET['mer']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="latPageEditer" value="<?= $_GET['lat']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="lonPageEditer" value="<?= $_GET['lon']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="pseudoPageEditer" value="<?= $_GET['pseudo']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="droitPageEditer" value="<?= $_GET['droit']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="sloganPageEditer" value="<?= $_GET['slogan']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="provenancePageEditer" value="<?= $_GET['provenance']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="imageOKPageEditer" value="<?= $_GET['imageOK']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="paysPageEditer" value="<?= $_GET['pays']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="villePageEditer" value="<?= $_GET['ville']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="equipePageEditer" value="<?= $_GET['equipe']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="mediaPageEditer" value="<?= $_GET['media']; ?>"></td>
                         </tr>
                     </table>
                     <div class="text-right" style="margin-top: 10px">
