@@ -56,21 +56,81 @@
                 <form method="post" action="index.php?action=dataTable">
                     <ul class="list-unstyled components mb-5">
                         <li>
+                            <label><b>ID</b></label>
+                            <div class="form-group d-flex">
+                                <input type="text" name="ID" class="form-control" placeholder="ID">
+                            </div>
+                        </li>
+                        <li>
+                            <label><b>IDImage</b></label>
+                            <div class="form-group d-flex">
+                                <input type="text" name="IDImage" class="form-control" placeholder="IDImage">
+                            </div>
+                        </li>
+                        <li>
+                            <label><b>mer</b></label>
+                            <div class="form-group d-flex">
+                                <input type="text" name="mer" class="form-control" placeholder="mer">
+                            </div>
+                        </li>
+                        <li>
+                            <label><b>lat</b></label>
+                            <div class="form-group d-flex">
+                                <input type="text" name="lat" class="form-control" placeholder="lat">
+                            </div>
+                        </li>
+                        <li>
+                            <label><b>lon</b></label>
+                            <div class="form-group d-flex">
+                                <input type="text" name="lon" class="form-control" placeholder="lon">
+                            </div>
+                        </li>
+                        <li>
                             <label><b>Pseudo</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="pseudo" class="form-control" placeholder="Pseudo">
+                                <input type="text" name="Pseudo" class="form-control" placeholder="Pseudo">
                             </div>
                         </li>
                         <li>
                             <label><b>Droit</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="droit" class="form-control" placeholder="Droit">
+                                <input type="text" name="Droit" class="form-control" placeholder="Droit">
                             </div>
                         </li>
                         <li>
                             <label><b>Slogan</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="slogan" class="form-control" placeholder="Slogan">
+                                <input type="text" name="Slogan" class="form-control" placeholder="Slogan">
+                            </div>
+                        </li>
+                        <li>
+                            <label><b>ImageOK</b></label>
+                            <div class="form-group d-flex">
+                                <input type="text" name="ImageOK" class="form-control" placeholder="ImageOK">
+                            </div>
+                        </li>
+                        <li>
+                            <label><b>Pays</b></label>
+                            <div class="form-group d-flex">
+                                <input type="text" name="Pays" class="form-control" placeholder="Pays">
+                            </div>
+                        </li>
+                        <li>
+                            <label><b>Ville</b></label>
+                            <div class="form-group d-flex">
+                                <input type="text" name="Ville" class="form-control" placeholder="Ville">
+                            </div>
+                        </li>
+                        <li>
+                            <label><b>Equipe</b></label>
+                            <div class="form-group d-flex">
+                                <input type="text" name="Equipe" class="form-control" placeholder="Equipe">
+                            </div>
+                        </li>
+                        <li>
+                            <label><b>Media</b></label>
+                            <div class="form-group d-flex">
+                                <input type="text" name="Media" class="form-control" placeholder="Media">
                             </div>
                         </li>
                         <li class="text-center">
