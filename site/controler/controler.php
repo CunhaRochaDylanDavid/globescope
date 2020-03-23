@@ -61,7 +61,7 @@ function dataTable()
 {
         $_GET['action'] = 'dataTable';
         $produit_content = getData();
-        $_GET['data'] = $produit_content;
+
         require "view/dataTable.php";
 }
 

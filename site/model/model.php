@@ -82,9 +82,9 @@ function donneeEnvoyerJSON()
 function getData()
 {
     $current_file = file_get_contents("model/data/images.json");
-    $parsed_booksData = json_decode($current_file);
-    $array_data[] = $parsed_booksData;
-    return $array_data;
+    $parsedData = json_decode($current_file);
+
+    return $parsedData;
 }
 
 

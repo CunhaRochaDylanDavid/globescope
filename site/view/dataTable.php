@@ -159,8 +159,7 @@
                 <th>Media</th>
             </tr>
             <?php
-            foreach ($_GET['data'] as $userData) {
-                foreach ($userData as $value) {
+            foreach ($produit_content as $value) {
                     echo '<tr>' .
                         '<td>' . $value->IDPlace . '</td>',
                         '<td>' . $value->IDImage . '</td>',
@@ -177,8 +176,8 @@
                         '<td>' . $value->Equipe . '</td>',
                         '<td>' . $value->Media . '</td>' .
                         '</tr>';
-                }
-            }
+
+
             ?>
         </table>
     </div>
@@ -188,10 +187,8 @@
                 <th style="border: 0px"></th>
             </tr>
             <?php
-            foreach ($_GET['data'] as $userData) {
-                foreach ($userData as $value) {
+
                     echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&idImage=' . $value->IDImage .'&mer=' . $value->mer .'&lat=' . $value->lat .'&lon=' . $value->lon . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan .'&provenance=' . $value->provenance . '&imageOK=' . $value->ImageOK . '&pays=' . $value->Pays .'&ville=' . $value->Ville .'&equipe=' . $value->Equipe .'&media=' . $value->Media . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
-                }
             }
             ?>
         </table>
