@@ -6,6 +6,8 @@
  * Time: 14:48
  */
 
+
+//cette fonction va vérifier si les donnéees du login entrée son juste
 function checkLogin($form)
 {
     if (isset($form['email']) && isset($form['password'])) {
@@ -24,8 +26,20 @@ function checkLogin($form)
 }
 
 
+//cette fonction va récuperer le tableau des données des photos dans le fichier JSON
+function getData()
+{
+    $current_file = file_get_contents("model/data/images.json");
+    $parsedData = json_decode($current_file);
+
+    //var_dump($parsedData);
+
+    return $parsedData;
+}
 
 
+
+//Cette fonction va permettre de modifier les donnée du JSON avec les donnée entrée par l'admin
 function donneeEnvoyerJSON()
 {
 
@@ -35,8 +49,9 @@ function donneeEnvoyerJSON()
     $tempArray = json_decode($path, true);
 
 
+
     $data = array(
-        "IDPlace" => @$_POST['idPageEditer'],
+        "IDPlace" => @$_POST['idPlacePageEditer'],
         "IDImage" => @$_POST['idImagePageEditer'],
         "mer" => @$_POST['merPageEditer'],
         "lat" => @$_POST['latPageEditer'],
@@ -45,29 +60,22 @@ function donneeEnvoyerJSON()
         "Droit" => @$_POST['droitPageEditer'],
         "Slogan" => @$_POST['sloganPageEditer'],
         "Provenance" => @$_POST['provenancePageEditer'],
-        "ImageOK" => @$_POST['imageOKPageEditer'],
-        "Pays" => @$_POST['paysPageEditer'],
-        "Ville" => @$_POST['villePageEditer'],
-        "Equipe" => @$_POST['equipePageEditer'],
-        "Media" => @$_POST['mediaPageEditer']
+        "ImageOK" => @$_POST['imageOKPageEditer']
+
     );
 
 
     foreach ($tempArray as $item) {
         $modification[@$item['IDPlace']] = $item;
-        $modification[$data["IDPlace"]]['IDImage'] = $data['idImagePageEditer'];
-        $modification[$data["IDPlace"]]['mer'] = $data['merPageEditer'];
-        $modification[$data["IDPlace"]]['lat'] = $data['latPageEditer'];
-        $modification[$data["IDPlace"]]['lon'] = $data['lonPageEditer'];
-        $modification[$data["IDPlace"]]['Pseudo'] = $data['pseudoPageEditer'];
-        $modification[$data["IDPlace"]]['Droit'] = $data['droitPageEditer'];
-        $modification[$data["IDPlace"]]['Slogan'] = $data['sloganPageEditer'];
-        $modification[$data["IDPlace"]]['Provenance'] = $data['provenancePageEditer'];
-        $modification[$data["IDPlace"]]['ImageOK'] = $data['imageOKPageEditer'];
-        $modification[$data["IDPlace"]]['Pays'] = $data['paysPageEditer'];
-        $modification[$data["IDPlace"]]['Ville'] = $data['villePageEditer'];
-        $modification[$data["IDPlace"]]['Equipe'] = $data['equipePageEditer'];
-        $modification[$data["IDPlace"]]['Media'] = $data['mediaPageEditer'];
+
+        $modification[$data["IDPlace"]]['mer'] = $data['mer'];
+        $modification[$data["IDPlace"]]['lat'] = $data['lat'];
+        $modification[$data["IDPlace"]]['lon'] = $data['lon'];
+        $modification[$data["IDPlace"]]['Pseudo'] = $data['Pseudo'];
+        $modification[$data["IDPlace"]]['Droit'] = $data['Droit'];
+        $modification[$data["IDPlace"]]['Slogan'] = $data['Slogan'];
+        $modification[$data["IDPlace"]]['Provenance'] = $data['Provenance'];
+        $modification[$data["IDPlace"]]['ImageOK'] = $data['ImageOK'];
     }
 
 
@@ -79,13 +87,7 @@ function donneeEnvoyerJSON()
 
 
 
-function getData()
-{
-    $current_file = file_get_contents("model/data/images.json");
-    $parsedData = json_decode($current_file);
 
-    return $parsedData;
-}
 
 
 /*

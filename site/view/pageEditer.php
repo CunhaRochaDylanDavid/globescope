@@ -43,10 +43,10 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-8 text-center" style="margin-top: 400px">
-                <form action="index.php?action=pageEditer& ?>" method="POST">
+                <form  method="POST" action="index.php?action=pageEditer">
                     <table class="text-center">
                         <tr style="border: black solid 2px">
-                            <th>ID</th>
+                            <th>IDPlace</th>
                             <th>IDImage</th>
                             <th>mer</th>
                             <th>lat</th>
@@ -54,14 +54,12 @@
                             <th>Pseudo</th>
                             <th>Droit</th>
                             <th>Slogan</th>
+                            <th>Provenance</th>
                             <th>ImageOK</th>
-                            <th>Pays</th>
-                            <th>Ville</th>
-                            <th>Equipe</th>
-                            <th>Media</th>
+
                         </tr>
                         <tr>
-                            <td><input name="idPageEditer" disabled value="<?= $_GET['id']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="idPlacePageEditer" value="<?= $_GET['id']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="idImagePageEditer" value="<?= $_GET['idImage']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="merPageEditer" value="<?= $_GET['mer']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="latPageEditer" value="<?= $_GET['lat']; ?>"></td>
@@ -71,10 +69,6 @@
                             <td><input class="form-control form-control-sm" name="sloganPageEditer" value="<?= $_GET['slogan']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="provenancePageEditer" value="<?= $_GET['provenance']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="imageOKPageEditer" value="<?= $_GET['imageOK']; ?>"></td>
-                            <td><input class="form-control form-control-sm" name="paysPageEditer" value="<?= $_GET['pays']; ?>"></td>
-                            <td><input class="form-control form-control-sm" name="villePageEditer" value="<?= $_GET['ville']; ?>"></td>
-                            <td><input class="form-control form-control-sm" name="equipePageEditer" value="<?= $_GET['equipe']; ?>"></td>
-                            <td><input class="form-control form-control-sm" name="mediaPageEditer" value="<?= $_GET['media']; ?>"></td>
                         </tr>
                     </table>
                     <div class="text-right" style="margin-top: 10px">
