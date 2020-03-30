@@ -79855,7 +79855,7 @@
     "Equipe": "",
     "Media": ""
   },
-  "3760": {
+  "3760": {{
     "IDPlace": "3760",
     "IDImage": "9-9-9",
     "mer": "9",
@@ -79863,7 +79863,7 @@
     "lon": "9",
     "Pseudo": "",
     "Droit": "",
-    "S{logan": "",
+    "Slogan": "",
     "Provenance": "",
     "ImageOK": "VRAI",
     "Pays": "",
