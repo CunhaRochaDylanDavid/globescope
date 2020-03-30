@@ -36,7 +36,7 @@ function pageEditer()
 {
     $_GET['action'] = "pageEditer";
 
-    $pseudo = @$_POST["pseudoPageEditer"];
+    $pseudo = $_POST["pseudoPageEditer"];
 
     if (isset($pseudo)) {
         donneeEnvoyerJSON();
@@ -61,7 +61,7 @@ function dataTable()
 {
         $_GET['action'] = 'dataTable';
         $produit_content = getData();
-        $_GET['data'] = $produit_content;
+
         require "view/dataTable.php";
 }
 
