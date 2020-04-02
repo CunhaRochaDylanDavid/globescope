@@ -41,6 +41,8 @@
             font-size: 20px;
         }
     </style>
+
+
 </head>
 <body>
 <div class="row">
@@ -51,80 +53,81 @@
                     <i class="fa fa-bars"></i>
                 </button>
             </div>
+            <a href="index.php?action=home"><input type="button" value="Retourner sur le globoscope"></a>
             <div class="p-4">
                 <h1 style="color: white">Filtre</h1>
-                <form method="post" action="index.php?action=dataTable">
+                <form method="POST" action="index.php?action=filtre">
                     <ul class="list-unstyled components mb-5">
                         <li>
                             <label><b>ID</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="ID" class="form-control" placeholder="ID">
+                                <input type="text" name="idFiltre" class="form-control" placeholder="ID">
                             </div>
                         </li>
                         <li>
                             <label><b>IDImage</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="IDImage" class="form-control" placeholder="IDImage">
+                                <input type="text" name="idImageFiltre" class="form-control" placeholder="IDImage">
                             </div>
                         </li>
                         <li>
                             <label><b>mer</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="mer" class="form-control" placeholder="mer">
+                                <input type="text" name="merFiltre" class="form-control" placeholder="mer">
                             </div>
                         </li>
                         <li>
                             <label><b>lat</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="lat" class="form-control" placeholder="lat">
+                                <input type="text" name="latFiltre" class="form-control" placeholder="lat">
                             </div>
                         </li>
                         <li>
                             <label><b>lon</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="lon" class="form-control" placeholder="lon">
+                                <input type="text" name="lonFiltre" class="form-control" placeholder="lon">
                             </div>
                         </li>
                         <li>
                             <label><b>Pseudo</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="Pseudo" class="form-control" placeholder="Pseudo">
+                                <input type="text" name="pseudoFiltre" class="form-control" placeholder="Pseudo">
                             </div>
                         </li>
                         <li>
                             <label><b>Droit</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="Droit" class="form-control" placeholder="Droit">
+                                <input type="text" name="droitFiltre" class="form-control" placeholder="Droit">
                             </div>
                         </li>
                         <li>
                             <label><b>Slogan</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="Slogan" class="form-control" placeholder="Slogan">
+                                <input type="text" name="sloganFiltre" class="form-control" placeholder="Slogan">
                             </div>
                         </li>
                         <li>
                             <label><b>ImageOK</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="ImageOK" class="form-control" placeholder="ImageOK">
+                                <input type="text" name="imageOKFiltre" class="form-control" placeholder="ImageOK">
                             </div>
                         </li>
                         <li>
                             <label><b>Pays</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="Pays" class="form-control" placeholder="Pays">
+                                <input type="text" name="paysFiltre" class="form-control" placeholder="Pays">
                             </div>
                         </li>
                         <li>
                             <label><b>Ville</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="Ville" class="form-control" placeholder="Ville">
+                                <input type="text" name="villeFiltre" class="form-control" placeholder="Ville">
                             </div>
                         </li>
                         <li>
                             <label><b>Equipe</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="Equipe" class="form-control" placeholder="Equipe">
+                                <input type="text" name="equipeFiltre" class="form-control" placeholder="Equipe">
                             </div>
                         </li>
                         <li>
@@ -138,11 +141,54 @@
                         </li>
                     </ul>
                 </form>
+
             </div>
         </nav>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- cette fonction permet de filtrer sa rechercher -->
+    <script>
+        //fonction pour rechercher par type (FONCTIONNEL)
+        function filtreType() {
+
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("barreRechercheType");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+//boucle qui vérifie chaque row
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+
+            }
+        }
+    </script>
+
+
+
     <div class="col-md-8 text-center">
-        <table style="color: white" class="text-center">
+
+        <!--barre de recherche par type-->
+        <input type="text" id="barreRechercheType" onkeyup="filtreType()" placeholder="Rechercher par Type">
+
+        <table style="color: white" class="text-center" id="myTable">
             <tr>
                 <th>IDPlace</th>
                 <th>IDImage</th>
@@ -176,6 +222,16 @@
 
             ?>
         </table>
+
+
+
+
+
+
+
+
+
+
     </div>
     <div class="col-md-2">
         <table>

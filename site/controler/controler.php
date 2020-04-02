@@ -61,9 +61,21 @@ function dataTable()
 {
         $_GET['action'] = 'dataTable';
         $produit_content = getData();
-
+        //var_dump($produit_content);
         require "view/dataTable.php";
 }
+
+
+
+function filtre($postFiltre){
+    $_GET['action'] = 'filtre';
+
+    filtreRecherche($postFiltre);
+
+     dataTable();
+}
+
+
 
 /**
  * @param $form

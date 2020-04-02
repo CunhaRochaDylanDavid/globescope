@@ -64,7 +64,6 @@ function donneeEnvoyerJSON()
 
     );
 
-
     foreach ($tempArray as $item) {
         $modification[@$item['IDPlace']] = $item;
 
@@ -90,23 +89,30 @@ function donneeEnvoyerJSON()
 
 
 
-/*
+
 function filtreRecherche($filtre)
 {
+
     if (file_exists("model/data/images.json")) {
+        echo "1";
         $kids = json_decode(file_get_contents("model/data/images.json"), true);
-        if (isset($filtre['pseudo'])) {
+        if (isset($filtre['pseudoFiltre'])) {
+            echo "2";
             $i = 0;
             foreach ($kids as $kid) {
-                if (!stristr($kid['Pseudo'], $filtre['pseudo'], 0)) {
-                    unset($kids[$i]);
+                if (stristr($kid['Pseudo'], $filtre['pseudoFiltre'], 0)) {
+                    $kid['Pseudo']="";
+                   echo $kid['Pseudo'];
                 }
                 $i++;
             }
             return $kids;
         }
-    } else {
-        return false;
     }
+    else
+        {
+        return false;
+        }
 }
-*/
+
+

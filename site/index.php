@@ -32,6 +32,10 @@ if (isset($_GET['action'])) {
             pageEditer();
             break;
 
+        case 'filtre':
+            filtre($_POST);
+            break;
+
         case 'dataTable':
             dataTable();
             break;
