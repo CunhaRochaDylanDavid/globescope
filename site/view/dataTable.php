@@ -48,6 +48,18 @@
         }
     </style>
 
+    <script>
+
+        //fonction pour rechercher par type (FONCTIONNEL)
+        function filtreType() {
+
+            var input, table;
+            input = document.getElementById("barreRechercheType");
+            table = document.getElementById("myTable");
+
+            document.write(table);
+        }
+    </script>
 
 </head>
 <body>
@@ -96,7 +108,7 @@
                         <li>
                             <label><b>Pseudo</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="pseudoFiltre" class="form-control" placeholder="Pseudo">
+                                <input type="text" name="pseudoFiltre" id="pseudoFiltreeeee" onkeyup="filtreType()" class="form-control" placeholder="Pseudo">
                             </div>
                         </li>
                         <li>
@@ -144,12 +156,14 @@
                         <li class="text-center">
                             <input type="submit" class="btn-primary" value="Rechercher">
                         </li>
+
                     </ul>
                 </form>
 
             </div>
         </nav>
     </div>
+<<<<<<< HEAD
     <!-- cette fonction permet de filtrer sa rechercher -->
     <script>
         //fonction pour rechercher par type (FONCTIONNEL)
@@ -177,8 +191,17 @@
 
 
     <div class="col-md-10 text-center">
+=======
 
-        <table style="color: white" class="text-center" id="myTable">
+
+
+
+
+    <div class="col-md-8 text-center">
+
+>>>>>>> c155c059f2b68be19e2383179395ef14874b351c
+
+        <table  style="color: white" class="text-center" >
             <tr>
                 <th>IDPlace</th>
                 <th>IDImage</th>
@@ -190,6 +213,9 @@
                 <th>Slogan</th>
                 <th>Provenance</th>
                 <th>ImageOK</th>
+                <th>Pays</th>
+                <th>Ville</th>
+                <th>Equipe</th>
 
             </tr>
             <?php
@@ -200,11 +226,14 @@
                     '<td>' . $value->mer . '</td>',
                     '<td>' . $value->lat . '</td>',
                     '<td>' . $value->lon . '</td>',
-                    '<td>' . $value->Pseudo . '</td>',
+                    '<td id="myTable">' . $value->Pseudo . '</td>',
                     '<td>' . $value->Droit . '</td>',
                     '<td>' . $value->Slogan . '</td>',
                     '<td>' . $value->Provenance . '</td>',
                     '<td>' . $value->ImageOK . '</td>',
+                    '<td>' . $value->Pays . '</td>',
+                    '<td>' . $value->Ville . '</td>',
+                    '<td>' . $value->Equipe . '</td>',
                 '</tr>';
             }
 
@@ -221,7 +250,11 @@
             <?php
             foreach ($produit_content as $value) {
 
+<<<<<<< HEAD
                 echo '<tr>' . '<td style="border: none ">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&idImage=' . $value->IDImage .'&mer=' . $value->mer .'&lat=' . $value->lat .'&lon=' . $value->lon . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan . '&imageOK=' . $value->ImageOK . '&pays=' . $value->Pays . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
+=======
+                echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&idImage=' . $value->IDImage .'&mer=' . $value->mer .'&lat=' . $value->lat .'&lon=' . $value->lon . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan .'&provenance=' . $value->Provenance . '&imageOK=' . $value->ImageOK . '&pays=' . $value->Pays . '&ville=' . $value->Ville .  '&equipe=' . $value->Equipe . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
+>>>>>>> c155c059f2b68be19e2383179395ef14874b351c
             }
             ?>
         </table>

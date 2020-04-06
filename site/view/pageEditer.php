@@ -57,6 +57,9 @@
                             <th>Slogan</th>
                             <th>Provenance</th>
                             <th>ImageOK</th>
+                            <th>Pays</th>
+                            <th>Ville</th>
+                            <th>Equipe</th>
 
                         </tr>
                         <tr>
@@ -70,6 +73,9 @@
                             <td><input class="form-control form-control-sm" name="sloganPageEditer" value="<?= $_GET['slogan']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="provenancePageEditer" value="<?= $_GET['provenance']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="imageOKPageEditer" value="<?= $_GET['imageOK']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="paysEditer" value="<?= $_GET['pays']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="villeEditer" value="<?= $_GET['ville']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="equipeEditer" value="<?= $_GET['equipe']; ?>"></td>
                         </tr>
                     </table>
                     <div class="text-right" style="margin-top: 10px">

@@ -5,13 +5,18 @@
     "mer": "0",
     "lat": "10",
     "lon": "3",
-    "Pseudo": "ff",
+    "Pseudo": "ffsss",
     "Droit": "",
-    "Slogan": "",
+    "Slogan": "asd",
     "Provenance": "",
     "ImageOK": "VRAI",
+<<<<<<< HEAD
     "Pays": " ",
     "Ville": "",
+=======
+    "Pays": "sdfsdf",
+    "Ville": "d",
+>>>>>>> c155c059f2b68be19e2383179395ef14874b351c
     "Equipe": ""
   },
   "145": {
