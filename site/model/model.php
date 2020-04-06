@@ -38,7 +38,6 @@ function getData()
 }
 
 
-
 //Cette fonction va permettre de modifier les donnée du JSON avec les donnée entrée par l'admin
 function donneeEnvoyerJSON()
 {
@@ -47,7 +46,6 @@ function donneeEnvoyerJSON()
 //chemin d'accès au fichier json
     $path = file_get_contents('model/data/images.json');
     $tempArray = json_decode($path, true);
-
 
 
     $data = array(
@@ -60,7 +58,10 @@ function donneeEnvoyerJSON()
         "Droit" => @$_POST['droitPageEditer'],
         "Slogan" => @$_POST['sloganPageEditer'],
         "Provenance" => @$_POST['provenancePageEditer'],
-        "ImageOK" => @$_POST['imageOKPageEditer']
+        "ImageOK" => @$_POST['imageOKPageEditer'],
+        "Pays" => @$_POST['paysEditer'],
+        "Ville" => @$_POST['villeEditer'],
+        "Equipe" => @$_POST['equipeEditer']
 
     );
 
@@ -75,6 +76,9 @@ function donneeEnvoyerJSON()
         $modification[$data["IDPlace"]]['Slogan'] = $data['Slogan'];
         $modification[$data["IDPlace"]]['Provenance'] = $data['Provenance'];
         $modification[$data["IDPlace"]]['ImageOK'] = $data['ImageOK'];
+        $modification[$data["IDPlace"]]['Pays'] = $data['Pays'];
+        $modification[$data["IDPlace"]]['Ville'] = $data['Ville'];
+        $modification[$data["IDPlace"]]['Equipe'] = $data['Equipe'];
     }
 
 
@@ -84,35 +88,24 @@ function donneeEnvoyerJSON()
 }
 
 
-
-
-
-
-
-
 function filtreRecherche($filtre)
 {
 
     if (file_exists("model/data/images.json")) {
-        echo "1";
         $kids = json_decode(file_get_contents("model/data/images.json"), true);
         if (isset($filtre['pseudoFiltre'])) {
-            echo "2";
             $i = 0;
             foreach ($kids as $kid) {
                 if (stristr($kid['Pseudo'], $filtre['pseudoFiltre'], 0)) {
-                    $kid['Pseudo']="";
-                   echo $kid['Pseudo'];
+                    echo $kid['Pseudo'];
                 }
                 $i++;
             }
             return $kids;
         }
-    }
-    else
-        {
+    } else {
         return false;
-        }
+    }
 }
 
 

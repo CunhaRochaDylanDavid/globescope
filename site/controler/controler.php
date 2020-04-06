@@ -36,7 +36,7 @@ function pageEditer()
 {
     $_GET['action'] = "pageEditer";
 
-    $pseudo = $_POST["pseudoPageEditer"];
+    $pseudo = @$_POST["pseudoPageEditer"];
 
     if (isset($pseudo)) {
         donneeEnvoyerJSON();
