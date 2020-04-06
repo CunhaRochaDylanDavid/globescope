@@ -12,9 +12,15 @@
     <title>Globescope - Login</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="view/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="view/css/styleSideBar.css">
@@ -31,7 +37,7 @@
 
         td {
             border: 1px solid #dddddd;
-            height: 40px;
+            height: 70px;
             font-size: 16px;
         }
 
@@ -46,14 +52,13 @@
 </head>
 <body>
 <div class="row">
-    <div class="col-md-2 wrapper d-flex align-items-stretch">
+    <div class="col-md-1 wrapper d-flex align-items-stretch">
         <nav id="sidebar" class="active">
             <div class="custom-menu">
                 <button type="button" id="sidebarCollapse" class="btn btn-primary">
                     <i class="fa fa-bars"></i>
                 </button>
             </div>
-            <a href="index.php?action=home"><input type="button" value="Retourner sur le globoscope"></a>
             <div class="p-4">
                 <h1 style="color: white">Filtre</h1>
                 <form method="POST" action="index.php?action=filtre">
@@ -145,17 +150,6 @@
             </div>
         </nav>
     </div>
-
-
-
-
-
-
-
-
-
-
-
     <!-- cette fonction permet de filtrer sa rechercher -->
     <script>
         //fonction pour rechercher par type (FONCTIONNEL)
@@ -182,11 +176,7 @@
     </script>
 
 
-
-    <div class="col-md-8 text-center">
-
-        <!--barre de recherche par type-->
-        <input type="text" id="barreRechercheType" onkeyup="filtreType()" placeholder="Rechercher par Type">
+    <div class="col-md-10 text-center">
 
         <table style="color: white" class="text-center" id="myTable">
             <tr>
@@ -203,8 +193,6 @@
 
             </tr>
             <?php
-
-
             foreach ($produit_content as $value) {
                 echo '<tr>' .
                     '<td>' . $value->IDPlace . '</td>',
@@ -224,16 +212,8 @@
         </table>
 
 
-
-
-
-
-
-
-
-
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
         <table>
             <tr>
                 <th style="border: 0px"></th>
@@ -241,7 +221,7 @@
             <?php
             foreach ($produit_content as $value) {
 
-                    echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&idImage=' . $value->IDImage .'&mer=' . $value->mer .'&lat=' . $value->lat .'&lon=' . $value->lon . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan .'&provenance=' . $value->Provenance . '&imageOK=' . $value->ImageOK . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
+                echo '<tr>' . '<td style="border: none ">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&idImage=' . $value->IDImage .'&mer=' . $value->mer .'&lat=' . $value->lat .'&lon=' . $value->lon . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan . '&imageOK=' . $value->ImageOK . '&pays=' . $value->Pays . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
             }
             ?>
         </table>
