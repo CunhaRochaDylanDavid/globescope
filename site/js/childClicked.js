@@ -30,8 +30,10 @@ function onImageClick(x)
                     childPseudo.textContent = myObj.Pseudo;
                     childCitation.textContent =  myObj.Slogan;
                     childRight.textContent = myObj.Droit;
-                    childPays.textContent = myObj.Pays;
-                    childVille.textContent = myObj.Ville;
+                    childCountry.textContent = myObj.Pays;
+                    childCity.textContent = myObj.Ville;
+                    childSchool.textContent = myObj.Ecole;
+                    childMedia.textContent = myObj.Media;
                 }
             }
         }

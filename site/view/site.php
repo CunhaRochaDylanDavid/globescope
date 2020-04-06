@@ -17,6 +17,7 @@
 <body>
 <span><img id="helpButton" class="GUI" src="view/images/questionMark.png"></span>
 <?php if (isset($_SESSION['admin'])) :?>
+<a id="continueEdit" href="index.php?action=dataTable">ÉDITER</a>
 <a id="loginLeaveEdit" href="index.php?action=logout">QUITTER ÉDITION</a>
 <?php else:?>
 <a id="loginEdit" href="index.php?action=login">ÉDITER</a>
@@ -63,11 +64,13 @@
     <div id="onClickDetails">
         <img id="childImage">
         <span id="separator"></span>
-        <div id="description">
-            <p id="childPseudo"></p>
-            <p id="childCitation"></p>
-            <p id="childRight"></p>
-        </div>
+            <b><label id="childPseudo"></label></b>
+            <b><label id="childCitation"></label></b>
+            <b><label id="childRight"></label></b>
+            <label id="childCountry"></label>
+            <label id="childCity"></label>
+            <label id="childSchool"></label>
+            <a style="color: dodgerblue; text-decoration: underline dodgerblue" id="childMedia" onclick="openMedia()"></a>
     </div>
     <div id="onSearchDetails" class="flexContainer">
         <h1>Resultat de la recherche</h1>

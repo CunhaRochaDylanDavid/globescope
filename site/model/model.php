@@ -57,11 +57,11 @@ function donneeEnvoyerJSON()
         "Pseudo" => @$_POST['pseudoPageEditer'],
         "Droit" => @$_POST['droitPageEditer'],
         "Slogan" => @$_POST['sloganPageEditer'],
-        "Provenance" => @$_POST['provenancePageEditer'],
         "ImageOK" => @$_POST['imageOKPageEditer'],
         "Pays" => @$_POST['paysEditer'],
         "Ville" => @$_POST['villeEditer'],
-        "Equipe" => @$_POST['equipeEditer']
+        "Ecole" => @$_POST['ecoleEditer'],
+        "Media" => @$_POST['mediaEditer']
 
     );
 
@@ -74,17 +74,45 @@ function donneeEnvoyerJSON()
         $modification[$data["IDPlace"]]['Pseudo'] = $data['Pseudo'];
         $modification[$data["IDPlace"]]['Droit'] = $data['Droit'];
         $modification[$data["IDPlace"]]['Slogan'] = $data['Slogan'];
-        $modification[$data["IDPlace"]]['Provenance'] = $data['Provenance'];
         $modification[$data["IDPlace"]]['ImageOK'] = $data['ImageOK'];
         $modification[$data["IDPlace"]]['Pays'] = $data['Pays'];
         $modification[$data["IDPlace"]]['Ville'] = $data['Ville'];
-        $modification[$data["IDPlace"]]['Equipe'] = $data['Equipe'];
+        $modification[$data["IDPlace"]]['Ecole'] = $data['Ecole'];
+        $modification[$data["IDPlace"]]['Media'] = $data['Media'];
     }
 
 
     file_put_contents("model/data/images.json", json_encode($modification));
+    writer();
+
+}
+
+function writer(){
+    $current_file = file_get_contents("model/data/images.json");
+    $parsed_file = json_decode($current_file);
 
 
+    $val = 0;
+    foreach ($parsed_file as $item){
+        $item =array(
+            'IDPlace' => $item ->IDPlace,
+            'IDImage' => $item -> IDImage,
+            'mer' => $item -> mer ,
+            'lat'=> $item ->lat,
+            'lon'=> $item ->lon,
+            'Pseudo'=> $item ->Pseudo,
+            'Droit'=> $item ->Droit,
+            'Slogan'=> $item ->Slogan,
+            'Pays'=> $item ->Pays,
+            'ImageOK'=> $item ->ImageOK,
+            'Ville' => $item ->Ville,
+            'Ecole' => $item ->Ecole,
+            'Media' => $item ->Media);
+        $data[$val] = $item;
+        $val++;
+    }
+    $input_file = json_encode($data);
+    file_put_contents("model/data/images.json",$input_file);
 }
 
 

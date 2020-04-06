@@ -86,6 +86,14 @@ var childImage = document.getElementById("childImage");
 var childPseudo = document.getElementById("childPseudo");
 var childCitation = document.getElementById("childCitation");
 var childRight = document.getElementById("childRight");
+var childCountry = document.getElementById("childCountry");
+var childCity = document.getElementById("childCity");
+var childSchool = document.getElementById("childSchool");
+var childMedia = document.getElementById("childMedia");
+
+function openMedia() {
+    window.open("childMedia");
+}
 
 childImage.onload = showOnClickDetails;
 closeSideBar.onclick = hideSideBar;

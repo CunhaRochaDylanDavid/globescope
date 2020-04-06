@@ -52,11 +52,25 @@ body
     width: 270px;
     bottom: 10px;
     font-weight: bold;
+    left: 180px;
+    font-size: 25px;
+    top: 12px;
+    cursor: pointer;
+    color: lightcoral;
+}
+
+#continueEdit{
+    color: white;
+    position: absolute;
+    padding: 5px;
+    width: 270px;
+    bottom: 10px;
+    font-weight: bold;
     left: 60px;
     font-size: 25px;
     top: 12px;
     cursor: pointer;
-
+    color: lightblue;
 }
 
 a{

@@ -7,6 +7,7 @@
  */
 ?>
     <!-- ce formulaire sert a entrer les changements -->
+    <!DOCTYPE html>
     <html>
 <head>
     <title>Globescope - Login</title>
@@ -47,19 +48,6 @@
             font-size: 20px;
         }
     </style>
-
-    <script>
-
-        //fonction pour rechercher par type (FONCTIONNEL)
-        function filtreType() {
-
-            var input, table;
-            input = document.getElementById("barreRechercheType");
-            table = document.getElementById("myTable");
-
-            document.write(table);
-        }
-    </script>
 
 </head>
 <body>
@@ -108,7 +96,8 @@
                         <li>
                             <label><b>Pseudo</b></label>
                             <div class="form-group d-flex">
-                                <input type="text" name="pseudoFiltre" id="pseudoFiltreeeee" onkeyup="filtreType()" class="form-control" placeholder="Pseudo">
+                                <input type="text" name="pseudoFiltre" id="pseudoFiltreeeee" onkeyup="filtreType()"
+                                       class="form-control" placeholder="Pseudo">
                             </div>
                         </li>
                         <li>
@@ -163,45 +152,9 @@
             </div>
         </nav>
     </div>
-<<<<<<< HEAD
-    <!-- cette fonction permet de filtrer sa rechercher -->
-    <script>
-        //fonction pour rechercher par type (FONCTIONNEL)
-        function filtreType() {
-
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("barreRechercheType");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-
-//boucle qui vérifie chaque row
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[1];
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-
-            }
-        }
-    </script>
-
-
     <div class="col-md-10 text-center">
-=======
 
-
-
-
-
-    <div class="col-md-8 text-center">
-
->>>>>>> c155c059f2b68be19e2383179395ef14874b351c
-
-        <table  style="color: white" class="text-center" >
+        <table style="color: white" class="text-center">
             <tr>
                 <th>IDPlace</th>
                 <th>IDImage</th>
@@ -211,11 +164,11 @@
                 <th>Pseudo</th>
                 <th>Droit</th>
                 <th>Slogan</th>
-                <th>Provenance</th>
                 <th>ImageOK</th>
                 <th>Pays</th>
                 <th>Ville</th>
-                <th>Equipe</th>
+                <th>Ecole</th>
+                <th>Media</th>
 
             </tr>
             <?php
@@ -226,14 +179,14 @@
                     '<td>' . $value->mer . '</td>',
                     '<td>' . $value->lat . '</td>',
                     '<td>' . $value->lon . '</td>',
-                    '<td id="myTable">' . $value->Pseudo . '</td>',
+                    '<td>' . $value->Pseudo . '</td>',
                     '<td>' . $value->Droit . '</td>',
                     '<td>' . $value->Slogan . '</td>',
-                    '<td>' . $value->Provenance . '</td>',
                     '<td>' . $value->ImageOK . '</td>',
                     '<td>' . $value->Pays . '</td>',
                     '<td>' . $value->Ville . '</td>',
-                    '<td>' . $value->Equipe . '</td>',
+                    '<td>' . $value->Ecole . '</td>',
+                    '<td>' . $value->Media . '</td>',
                 '</tr>';
             }
 
@@ -249,12 +202,7 @@
             </tr>
             <?php
             foreach ($produit_content as $value) {
-
-<<<<<<< HEAD
-                echo '<tr>' . '<td style="border: none ">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&idImage=' . $value->IDImage .'&mer=' . $value->mer .'&lat=' . $value->lat .'&lon=' . $value->lon . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan . '&imageOK=' . $value->ImageOK . '&pays=' . $value->Pays . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
-=======
-                echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&idImage=' . $value->IDImage .'&mer=' . $value->mer .'&lat=' . $value->lat .'&lon=' . $value->lon . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan .'&provenance=' . $value->Provenance . '&imageOK=' . $value->ImageOK . '&pays=' . $value->Pays . '&ville=' . $value->Ville .  '&equipe=' . $value->Equipe . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
->>>>>>> c155c059f2b68be19e2383179395ef14874b351c
+                echo '<tr>' . '<td style="border: none">' . '<a href="index.php?action=pageEditer&id=' . $value->IDPlace . '&idImage=' . $value->IDImage . '&mer=' . $value->mer . '&lat=' . $value->lat . '&lon=' . $value->lon . '&pseudo=' . $value->Pseudo . '&droit=' . $value->Droit . '&slogan=' . $value->Slogan . '&imageOK=' . $value->ImageOK . '&pays=' . $value->Pays . '&ville=' . $value->Ville . '&ecole=' . $value->Ecole . '&media=' . $value->Media . '" class="btn btn-secondary btn-sm">Modifier</a>' . '</td>' . '</tr>';
             }
             ?>
         </table>
@@ -265,4 +213,3 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 </body>
-<?php

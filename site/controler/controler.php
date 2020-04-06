@@ -41,7 +41,7 @@ function pageEditer()
     if (isset($pseudo)) {
         donneeEnvoyerJSON();
         dataTable();
-    }else
+    } else
         require "view/pageEditer.php";
 }
 
@@ -59,22 +59,20 @@ function logout()
  */
 function dataTable()
 {
-        $_GET['action'] = 'dataTable';
-        $produit_content = getData();
-        //var_dump($produit_content);
-        require "view/dataTable.php";
+    $_GET['action'] = 'dataTable';
+    $produit_content = getData();
+    require "view/dataTable.php";
 }
 
 
-
-function filtre($postFiltre){
+function filtre($postFiltre)
+{
     $_GET['action'] = 'filtre';
 
     filtreRecherche($postFiltre);
 
-     dataTable();
+    dataTable();
 }
-
 
 
 /**

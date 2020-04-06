@@ -55,11 +55,11 @@
                             <th>Pseudo</th>
                             <th>Droit</th>
                             <th>Slogan</th>
-                            <th>Provenance</th>
                             <th>ImageOK</th>
                             <th>Pays</th>
                             <th>Ville</th>
-                            <th>Equipe</th>
+                            <th>Ecole</th>
+                            <th>Media</th>
 
                         </tr>
                         <tr>
@@ -71,11 +71,11 @@
                             <td><input class="form-control form-control-sm" name="pseudoPageEditer" value="<?= $_GET['pseudo']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="droitPageEditer" value="<?= $_GET['droit']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="sloganPageEditer" value="<?= $_GET['slogan']; ?>"></td>
-                            <td><input class="form-control form-control-sm" name="provenancePageEditer" value="<?= $_GET['provenance']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="imageOKPageEditer" value="<?= $_GET['imageOK']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="paysEditer" value="<?= $_GET['pays']; ?>"></td>
                             <td><input class="form-control form-control-sm" name="villeEditer" value="<?= $_GET['ville']; ?>"></td>
-                            <td><input class="form-control form-control-sm" name="equipeEditer" value="<?= $_GET['equipe']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="ecoleEditer" value="<?= $_GET['ecole']; ?>"></td>
+                            <td><input class="form-control form-control-sm" name="mediaEditer" value="<?= $_GET['media']; ?>"></td>
                         </tr>
                     </table>
                     <div class="text-right" style="margin-top: 10px">
